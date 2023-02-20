@@ -1,0 +1,25 @@
+body {
+    background-image: url('Wood.jpg');
+    background-size: 100%;
+  }
+
+
+.ongoing-bg{
+    width: 200px;
+    height: 100px;
+    fill: white;
+    stroke-opacity: 1px;
+    stroke: white;
+}
+
+.ongoing-tasks{
+    resize: both;
+    overflow: auto;
+    width: 50px;
+}
+
+.imgq {
+    max-width: 100%;
+    height: auto;
+
+}
