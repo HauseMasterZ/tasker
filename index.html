@@ -23,7 +23,7 @@
         left: 0;
         right: 65%;
         margin: auto;
-        border-radius: 2%;
+        border-radius: 1rem;
       }
       #ongoing-tasks-bg{
         width: 50vh;
@@ -37,37 +37,138 @@
         left: 65%;
         right: 0;
         margin: auto;
-        border-radius: 2%;
+        border-radius: 1rem;
       }
       #task-bg{
         width: 46vh;
         height: 10vh;
         border: 2px solid black;
+        /* background-color: rgb(15, 65, 204); */
+        background-color: white;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
-        border-radius: 2%;
+        border-radius: 0.5rem;
+        background-image: linear-gradient(to right, #EC4899, #8B5CF6);
       }
       h2{
         padding-left: 5%;
       }
-      .ongoing{
+      #ongoing-tasks{
         position: relative;
         padding-top: 20%;
       }
-      .text{
-        border-color: yellow;
-        background-color: yellow;
-        position: absolute;
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    
+      .ongoing-task{ 
+        margin-bottom: -10px;
       }
+      ::placeholder{
+        color: rgb(202, 202, 202);
+      }
+      .text{
+        color: white;
+        margin-left: 1%;
+        position: relative;
+        margin-top: 1vh;
+        resize: none;
+        appearance: none;
+        outline: none;
+        background: none;
+        /* background-color: #1F2937; */
+        background-color: transparent;
+        padding: 0.5rem;
+        border-color: transparent;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+      }
+      .text:hover{
+        border-width: 1px;
+        border-color: white;
+      }
+      textarea[type=text] {
+        box-sizing: border-box;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+      }
+
+      textarea[type=text]:focus {
+        border-color: transparent;
+      }
+
+    .tick{
+      width: 5vh;
+      height: 5vh;
+      /* margin-bottom: 1%;
+      margin-left: 15%; */
+      transition: 0.18s;
+    }
+    .tick:hover{
+      opacity: 0.8;
+    }
+    .tick:active{
+      opacity: 0.6;
+    }
+    .cross{
+      width: 5.5vh;
+      height: 5.5vh;
+      /* margin-bottom: 0.7%;
+      margin-left: 1%; */
+      transition: 0.18s;
+
+
+    }
+    .cross:hover{
+      opacity: 0.8;
+    }
+    .cross:active{
+      opacity: 0.6;
+    }
+    #plus{
+      width: 5vh;
+      height: 5vh;
+      position: absolute;
+      top: 2.5%;
+      right: 4%;
+      transition: 0.18s;
+
+    }
+    #plus:hover{
+      opacity: 0.8;
+    }
+    #plus:active{
+      opacity: 0.6;
+    }
+    #icons{
+      position: absolute;
+      /* right: 1%; */
+      top: 18%;
+      right: 3%;
+    }
+    .curr_task{
+        width: 46vh;
+        height: 10vh;
+        border: 2px solid black;
+        /* background-color: rgb(15, 65, 204); */
+        background-color: white;
+        /* position: absolute; */
+        /* top: -1000px; */
+        /* bottom: 0; */
+        /* left: 30%; */
+        /* right: 0; */
+        /* margin: auto; */
+        /* padding-bottom: 10%; */
+        /* margin-bottom: 10%; */
+        border-radius: 0.5rem;
+        background-image: linear-gradient(to right, #EC4899, #8B5CF6);
+  
+    }
+    .icons {
+      position:relative;
+    }
+    
+
     </style>
 
 
@@ -76,12 +177,15 @@
 
       <h2>Ongoing Tasks</h2>
 
-      <div class="ongoing">
-        <div id="task-bg">
-          <input type="text" class="text">
+      <img src="plus.svg" id="plus" alt="plus icon">
+      <div class="ongoing-task" id="ongoing-tasks">
+        <div class="curr_task" id="task-bg">
+          <textarea type="text" placeholder="Input Task" class="text"></textarea>
+          <div id="icons" class="icons">
+            <img src="tick.svg" class="tick" alt="tick icon">
+            <img src="cross2.svg" class="cross" alt="cross icon">
+          </div>
         </div>
-
-
       </div>
 
     </div>
@@ -96,6 +200,37 @@
 </body>
 
 <script>
+  window.addEventListener('load', () => {
+    const plus_btn = document.querySelector("#plus")
+    const list_el = document.querySelector("#ongoing-tasks");
+    const each_el = document.querySelector("#curr_task")
+    plus_btn.addEventListener('click', () => {
+      const task_el = document.createElement("div");
+      task_el.classList.add("ongoing-task");
+      const task_content_el = document.createElement("div");
+      task_content_el.classList.add("curr_task");
+      task_el.appendChild(task_content_el)
+
+      const task_icons_el = document.createElement("div");
+      task_icons_el.classList.add("icons");
+      
+      const task_tick_el = document.createElement("img");
+      task_tick_el.src = "tick.svg"
+      task_tick_el.classList.add("tick");
+      // task_tick_el.innerHTML = "Done";
+      
+      const task_delete_el = document.createElement("img");
+      task_delete_el.src = "cross2.svg"
+      task_delete_el.classList.add("cross");
+      // task_delete_el.innerHTML = "Delete";
+      task_icons_el.appendChild(task_tick_el)
+      task_icons_el.appendChild(task_delete_el)
+      task_el.appendChild(task_icons_el)
+
+      list_el.insertBefore(task_el, list_el.children[0]);
+    })
+
+  })
 
 </script>
 
