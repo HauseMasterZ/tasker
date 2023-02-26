@@ -8,13 +8,14 @@
 </head>
     
     <style>
-        body {
+      
+      body {
         background-image: url('Wood.jpg');
         background-size: 100%;
       }
-      #completed-tasks-bg{
-        width: 50vh;
-        height: 90vh;
+      .completed-tasks-bg{
+        width: 25%;
+        height: 90%;
         border: 2px solid black;
         background-color: white;
         position: absolute;
@@ -24,13 +25,13 @@
         right: 65%;
         margin: auto;
         border-radius: 1rem;
+        /* opacity: 0.7; */
       }
-      #ongoing-tasks-bg{
-        width: 50vh;
-        height: 90vh;
+      .ongoing-tasks-bg{
+        width: 25%;
+        height: 90%;
         border: 2px solid black;
         background-color: white;
-        /* background-color: rgba(255, 255, 255, 0.6); */
         position: absolute;
         top: 0;
         bottom: 0;
@@ -39,160 +40,160 @@
         margin: auto;
         border-radius: 1rem;
       }
-      #task-bg{
+      .curr_task{
         width: 46vh;
         height: 10vh;
         border: 2px solid black;
-        /* background-color: rgb(15, 65, 204); */
         background-color: white;
-        position: absolute;
+        position: relative;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
+        margin-top: 6%;
         border-radius: 0.5rem;
         background-image: linear-gradient(to right, #EC4899, #8B5CF6);
       }
       h2{
+        display: block;
+        width: auto;
+        font-size: 100%;
         padding-left: 5%;
       }
-      #ongoing-tasks{
-        position: relative;
-        padding-top: 20%;
-      }
-      .ongoing-task{ 
-        margin-bottom: -10px;
-      }
+
+
       ::placeholder{
         color: rgb(202, 202, 202);
       }
-      .text{
+      #text{
         color: white;
         margin-left: 1%;
         position: relative;
+        width: 30vh;
         margin-top: 1vh;
         resize: none;
         appearance: none;
         outline: none;
         background: none;
-        /* background-color: #1F2937; */
         background-color: transparent;
         padding: 0.5rem;
         border-color: transparent;
         border-radius: 0.5rem;
         font-size: 1rem;
-      }
-      .text:hover{
-        border-width: 1px;
-        border-color: white;
-      }
-      textarea[type=text] {
         box-sizing: border-box;
+        -webkit-box-sizing: border-box;
         -webkit-transition: 0.5s;
         transition: 0.5s;
       }
-
-      textarea[type=text]:focus {
-        border-color: transparent;
+      #text:hover{
+        border-width: 1px;
+        border-color: white;
       }
 
-    .tick{
-      width: 5vh;
-      height: 5vh;
-      /* margin-bottom: 1%;
-      margin-left: 15%; */
-      transition: 0.18s;
-    }
-    .tick:hover{
-      opacity: 0.8;
-    }
-    .tick:active{
-      opacity: 0.6;
-    }
-    .cross{
-      width: 5.5vh;
-      height: 5.5vh;
-      /* margin-bottom: 0.7%;
-      margin-left: 1%; */
-      transition: 0.18s;
+      #tick{
+        width: 5vh;
+        height: 5vh;
+        transition: 0.18s;
+      }
+      #tick:hover{
+        opacity: 0.8;
+      }
+      #tick:active{
+        opacity: 0.6;
+      }
+      #cross{
+        width: 5.5vh;
+        height: 5.5vh;
+        transition: 0.18s;
+      }
+      #cross:hover{
+        opacity: 0.8;
+      }
+      #cross:active{
+        opacity: 0.6;
+      }
+      #plus{
+        width: 5vh;
+        height: 5vh;
+        position: absolute;
+        top: 2.5%;
+        right: 4%;
+        transition: 0.18s;
+      }
+      #plus:hover{
+        opacity: 0.8;
+      }
+      #plus:active{
+        opacity: 0.6;
+      }
 
-
-    }
-    .cross:hover{
-      opacity: 0.8;
-    }
-    .cross:active{
-      opacity: 0.6;
-    }
-    #plus{
-      width: 5vh;
-      height: 5vh;
-      position: absolute;
-      top: 2.5%;
-      right: 4%;
-      transition: 0.18s;
-
-    }
-    #plus:hover{
-      opacity: 0.8;
-    }
-    #plus:active{
-      opacity: 0.6;
-    }
-    #icons{
-      position: absolute;
-      /* right: 1%; */
-      top: 18%;
-      right: 3%;
-    }
-    .curr_task{
-        width: 46vh;
-        height: 10vh;
-        border: 2px solid black;
-        /* background-color: rgb(15, 65, 204); */
-        background-color: white;
-        /* position: absolute; */
-        /* top: -1000px; */
-        /* bottom: 0; */
-        /* left: 30%; */
-        /* right: 0; */
-        /* margin: auto; */
-        /* padding-bottom: 10%; */
-        /* margin-bottom: 10%; */
-        border-radius: 0.5rem;
-        background-image: linear-gradient(to right, #EC4899, #8B5CF6);
-  
-    }
-    .icons {
-      position:relative;
-    }
+      .icons {
+        width: 30%;
+        position: relative;
+        /* top: -80%; */
+        top: -8vh;
+        left: 70%;
+      }
     
+      .completed-tasks{
+        opacity: 0.7;
+        border: none;
+      }
 
+      #text-completed{
+        color: white;
+        margin-left: 1%;
+        position: relative;
+        width: 30vh;
+        margin-top: 1vh;
+        resize: none;
+        appearance: none;
+        outline: none;
+        background: none;
+        background-color: transparent;
+        padding: 0.5rem;
+        border-color: transparent;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+      }
     </style>
 
 
 <body>
-    <div id="ongoing-tasks-bg">
+    <div class="ongoing-tasks-bg">
 
-      <h2>Ongoing Tasks</h2>
+      <h2>Ongoing Tasks (ctrl+enter)</h2>
 
       <img src="plus.svg" id="plus" alt="plus icon">
-      <div class="ongoing-task" id="ongoing-tasks">
-        <div class="curr_task" id="task-bg">
-          <textarea type="text" placeholder="Input Task" class="text"></textarea>
-          <div id="icons" class="icons">
-            <img src="tick.svg" class="tick" alt="tick icon">
-            <img src="cross2.svg" class="cross" alt="cross icon">
+
+      <div class="ongoing-tasks">
+
+
+        <!-- <div class="curr_task">
+
+          <textarea type="text" placeholder="Input Task" id="text"></textarea>
+
+          <div class="icons">
+            <img src="tick.svg" id="tick" alt="tick icon">
+            <img src="cross2.svg" id="cross" alt="cross icon">
           </div>
-        </div>
+
+        </div> -->
+
       </div>
 
     </div>
 
 
-    <div id="completed-tasks-bg">
+    <div class="completed-tasks-bg">
+
       <h2>Completed Tasks</h2>
+      <div class="completed-tasks"></div>
     </div>
 
 
@@ -201,37 +202,128 @@
 
 <script>
   window.addEventListener('load', () => {
+    
+    
     const plus_btn = document.querySelector("#plus")
-    const list_el = document.querySelector("#ongoing-tasks");
-    const each_el = document.querySelector("#curr_task")
+    const list_el = document.querySelector(".ongoing-tasks");
+    const each_el = document.querySelector(".curr_task")
+    const tick_btn = document.querySelector("#tick");
     plus_btn.addEventListener('click', () => {
-      const task_el = document.createElement("div");
-      task_el.classList.add("ongoing-task");
+      if(list_el.children.length > 5){
+        alert("Cannot add more than 6 on-going tasks");
+        return 0;
+      }
       const task_content_el = document.createElement("div");
       task_content_el.classList.add("curr_task");
-      task_el.appendChild(task_content_el)
-
+      const task_textarea = document.createElement("textarea");
+      task_textarea.name = "text";
+      task_textarea.placeholder = "Input Task";
+      task_textarea.id = "text";
       const task_icons_el = document.createElement("div");
       task_icons_el.classList.add("icons");
       
       const task_tick_el = document.createElement("img");
       task_tick_el.src = "tick.svg"
-      task_tick_el.classList.add("tick");
-      // task_tick_el.innerHTML = "Done";
+      task_tick_el.id = "tick";
       
       const task_delete_el = document.createElement("img");
       task_delete_el.src = "cross2.svg"
-      task_delete_el.classList.add("cross");
-      // task_delete_el.innerHTML = "Delete";
-      task_icons_el.appendChild(task_tick_el)
-      task_icons_el.appendChild(task_delete_el)
-      task_el.appendChild(task_icons_el)
+      task_delete_el.id = "cross";
 
-      list_el.insertBefore(task_el, list_el.children[0]);
+
+      task_icons_el.appendChild(task_tick_el);
+      task_icons_el.appendChild(task_delete_el);
+      
+      task_content_el.appendChild(task_textarea);
+      task_content_el.appendChild(task_icons_el);
+      list_el.insertBefore(task_content_el, list_el.children[0]);
+
+      completed = document.querySelector(".completed-tasks");
+      task_tick_el.addEventListener('click', () => {
+        task_icons_el.removeChild(task_tick_el);
+        task_textarea.setAttribute("readonly", "readonly");
+        task_textarea.id = "text-completed";
+        completed.appendChild(task_content_el);
+
+      })
+      
+      
+      task_delete_el.addEventListener('click', () => {
+        const div = task_content_el.parentNode;
+        div.removeChild(task_content_el);
+
+
+      })
     })
 
-  })
+    document.onkeydown = keydown;
+    function keydown(evt){
+      if (!evt) evt = event;
+      if (evt.ctrlKey && evt.keyCode == 13){
+        if(list_el.children.length > 5){
+          alert("Cannot add more than 6 on-going tasks");
+          return 0;
+        }
+        const task_content_el = document.createElement("div");
+        task_content_el.classList.add("curr_task");
+        const task_textarea = document.createElement("textarea");
+        task_textarea.name = "text";
+        task_textarea.placeholder = "Input Task";
+        task_textarea.id = "text";
+        const task_icons_el = document.createElement("div");
+        task_icons_el.classList.add("icons");
+        
+        const task_tick_el = document.createElement("img");
+        task_tick_el.src = "tick.svg"
+        task_tick_el.id = "tick";
+        
+        const task_delete_el = document.createElement("img");
+        task_delete_el.src = "cross2.svg"
+        task_delete_el.id = "cross";
 
+
+        task_icons_el.appendChild(task_tick_el);
+        task_icons_el.appendChild(task_delete_el);
+        
+        task_content_el.appendChild(task_textarea);
+        task_content_el.appendChild(task_icons_el);
+        list_el.insertBefore(task_content_el, list_el.children[0]);
+        completed = document.querySelector(".completed-tasks");
+        
+        task_tick_el.addEventListener('click', () => {
+        task_icons_el.removeChild(task_tick_el);
+        task_textarea.setAttribute("readonly", "readonly");
+        completed.appendChild(task_content_el);
+
+      })
+      
+      
+      task_delete_el.addEventListener('click', () => {
+        const div = task_content_el.parentNode;
+        div.removeChild(task_content_el);
+
+
+      })
+      }
+      }
+
+    // function tick_click(i) {
+    //   const completed = document.querySelector(".completed-tasks-bg");
+    //   completed.appendChild(list_el.children[i]);
+    // }
+
+    // const ticks = document.querySelectorAll('#tick');
+    // console.log(ticks)
+    // var i = 0;
+    // for (const btn of ticks){
+    //     i = (i+1)%list_el.children.length
+    //     btn.addEventListener('click', tick_click)
+    //   }
+
+
+
+
+  })
 </script>
 
 </html>
