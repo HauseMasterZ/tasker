@@ -1,6 +1,5 @@
 # Tasker
-Tasking (ToDo) Website which follows Zero Trust Policy, Completely Anonymous / Private.
-
+Tasking (ToDo) Website.
 WIP
 
 [link](https://hausemasterz.github.io/tasker/).
